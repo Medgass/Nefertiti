@@ -1,0 +1,157 @@
+<svg viewBox="0 0 600 750" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style>
+      @keyframes float-left {
+        0%, 100% { transform: translateX(0px) translateY(0px); }
+        50% { transform: translateX(10px) translateY(-15px); }
+      }
+      
+      @keyframes glow-intense {
+        0%, 100% { filter: drop-shadow(0 0 20px rgba(217, 119, 6, 0.4)); }
+        50% { filter: drop-shadow(0 0 60px rgba(217, 119, 6, 0.8)); }
+      }
+      
+      @keyframes rotate-necklace {
+        0%, 100% { transform: rotateZ(0deg); }
+        10% { transform: rotateZ(2deg); }
+        20% { transform: rotateZ(0deg); }
+      }
+      
+      .nefertiti-profile {
+        animation: float-left 5s ease-in-out infinite;
+        filter: drop-shadow(0 0 20px rgba(217, 119, 6, 0.4));
+      }
+      
+      .necklace {
+        animation: rotate-necklace 4s ease-in-out infinite;
+      }
+      
+      .crown-nef {
+        animation: glow-intense 3s ease-in-out infinite;
+      }
+    </style>
+    
+    <linearGradient id="goldLinear" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFFACD;stop-opacity:1" />
+      <stop offset="15%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="35%" style="stop-color:#FBBF24;stop-opacity:1" />
+      <stop offset="55%" style="stop-color:#FFA500;stop-opacity:1" />
+      <stop offset="75%" style="stop-color:#D97706;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B4513;stop-opacity:1" />
+    </linearGradient>
+    
+    <radialGradient id="faceSkin" cx="35%" cy="35%" r="65%">
+      <stop offset="0%" style="stop-color:#F5DEB3;stop-opacity:1" />
+      <stop offset="40%" style="stop-color:#FFE4B5;stop-opacity:1" />
+      <stop offset="70%" style="stop-color:#D2B48C;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#A0713A;stop-opacity:1" />
+    </radialGradient>
+    
+    <filter id="nefertitGlow\">
+      <feGaussianBlur stdDeviation=\"3\" result=\"coloredBlur\"/>
+      <feOffset dx=\"0\" dy=\"2\" result=\"offsetblur\"/>
+      <feFlood flood-color=\"#D97706\" flood-opacity=\"0.5\" result=\"offsetcolor\"/>
+      <feComposite in=\"offsetcolor\" in2=\"offsetblur\" operator=\"in\" result=\"offsetblur\"/>
+      <feMerge>
+        <feMergeNode in=\"offsetblur\"/>
+        <feMergeNode in=\"SourceGraphic\"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <rect width="600" height="750" fill="none"/>
+  
+  <g class="nefertiti-profile">
+    <!-- Crown (Tall Diadem) -->
+    <g class="crown-nef">
+      <path d="M 200 40 L 220 10 L 250 0 L 280 10 L 300 40 L 290 50 Q 250 60 210 50 Z" 
+            fill="url(#goldLinear)" stroke="#B45309" stroke-width="2"/>
+      
+      <!-- Crown jewel -->
+      <circle cx="250" cy="5" r="10" fill="#FCD34D"/>
+      <circle cx="250" cy="5" r="6" fill="#FBBF24"/>
+      
+      <!-- Ostrich feathers (decorative) -->
+      <path d="M 230 45 Q 220 0 225 -30" stroke="url(#goldLinear)" stroke-width="3" fill="none" opacity="0.8"/>
+      <path d="M 270 45 Q 280 0 275 -30" stroke="url(#goldLinear)" stroke-width="3" fill="none" opacity="0.8"/>
+    </g>
+    
+    <!-- Head (Profile) -->
+    <ellipse cx="280" cy="220" rx="85" ry="120" fill="url(#faceSkin)"/>
+    
+    <!-- Hair -->
+    <path d="M 195 150 Q 180 180 185 280 Q 190 350 250 380 Q 310 350 315 280 Q 320 180 305 150" 
+          fill="url(#goldLinear)" stroke="#8B6914" stroke-width="2"/>
+    
+    <!-- Hair strands animation -->
+    <g opacity="0.6">
+      <path d="M 200 160 Q 190 200 195 280" stroke="#D97706" stroke-width="1.5" fill="none"/>
+      <path d="M 220 140 Q 210 200 215 300" stroke="#D97706" stroke-width="1.5" fill="none"/>
+      <path d="M 290 140 Q 300 200 295 300" stroke="#D97706" stroke-width="1.5" fill="none"/>
+      <path d="M 310 160 Q 320 200 315 280" stroke="#D97706" stroke-width="1.5" fill="none"/>
+    </g>
+    
+    <!-- Eye (profile view) -->
+    <ellipse cx="290" cy="210" rx="18" ry="24" fill="#FEF3C7" stroke="#5C3D2E" stroke-width="2"/>
+    <circle cx="295" cy="215" r="10" fill="#1F2937"/>
+    <circle cx="297" cy="212" r="4" fill="#FEF3C7"/>
+    
+    <!-- Eyebrow -->
+    <path d="M 270 190 Q 290 175 310 185" stroke="#5C3D2E" stroke-width="3" fill="none"/>
+    
+    <!-- Ear -->
+    <ellipse cx="200" cy="240" rx="25" ry="35" fill="url(#faceSkin)" stroke="#8B6914" stroke-width="1"/>
+    
+    <!-- Nose -->
+    <path d="M 290 220 L 290 280" stroke="#8B6914" stroke-width="3" fill="none"/>
+    <circle cx="288" cy="285" r="3" fill="#8B6914"/>
+    <circle cx="292" cy="285" r="3" fill="#8B6914"/>
+    
+    <!-- Lips -->
+    <path d="M 240 310 Q 290 340 320 300" stroke="#9B4D1F" stroke-width="3" fill="none"/>
+    <path d="M 240 310 L 320 300" stroke="#8B4513" stroke-width="2" opacity="0.6" fill="none"/>
+    
+    <!-- Chin -->
+    <path d="M 250 340 Q 280 360 310 340" fill="url(#faceSkin)" opacity="0.8"/>
+    
+    <!-- Neck -->
+    <rect x="260" y="320" width="60" height="80" fill="url(#faceSkin)" opacity="0.9"/>
+    
+    <!-- Broad Collar (Wesekh) -->
+    <g class="necklace">
+      <ellipse cx="300" cy="400" rx="120" ry="50" fill="url(#goldLinear)" stroke="#8B6914" stroke-width="2"/>
+      
+      <!-- Collar detail rows -->
+      <ellipse cx="300" cy="390" rx="115" ry="15" fill="none" stroke="#B45309" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="300" cy="405" rx="115" ry="15" fill="none" stroke="#B45309" stroke-width="1" opacity="0.6"/>
+      <ellipse cx="300" cy="420" rx="115" ry="15" fill="none" stroke="#B45309" stroke-width="1" opacity="0.6"/>
+      
+      <!-- Decorative beads -->
+      <circle cx="220" cy="400" r="12" fill="#FCD34D"/>
+      <circle cx="380" cy="400" r="12" fill="#FCD34D"/>
+      <circle cx="300" cy="425" r="14" fill="#FCD34D"/>
+      
+      <!-- Smaller beads -->
+      <circle cx="250" cy="390" r="6" fill="#FBBF24"/>
+      <circle cx="350" cy="390" r="6" fill="#FBBF24"/>
+      <circle cx="270" cy="415" r="6" fill="#FBBF24"/>
+      <circle cx="330" cy="415" r="6" fill="#FBBF24"/>
+    </g>
+    
+    <!-- Shoulders/Chest -->
+    <ellipse cx="300" cy="480" rx="130" ry="100" fill="url(#goldLinear)" opacity="0.85" stroke="#8B6914" stroke-width="1"/>
+    
+    <!-- Dress pattern -->
+    <g opacity="0.4">
+      <line x1="200" y1="450" x2="400" y2="450" stroke="#8B6914" stroke-width="1"/>
+      <line x1="195" y1="500" x2="405" y2="500" stroke="#8B6914" stroke-width="1"/>
+      <line x1="190" y1="550" x2="410" y2="550" stroke="#8B6914" stroke-width="1"/>
+      <line x1="185" y1="600" x2="415" y2="600" stroke="#8B6914" stroke-width="1"/>
+      <line x1="180" y1="650" x2="420" y2="650" stroke="#8B6914" stroke-width="1"/>
+    </g>
+    
+    <!-- Glow aura -->
+    <circle cx="300" cy="300" r="200" fill="none" stroke="#FCD34D" stroke-width="3" opacity="0.2"/>
+    <circle cx="300" cy="300" r="220" fill="none" stroke="#D97706" stroke-width="2" opacity="0.1"/>
+  </g>
+</svg>
